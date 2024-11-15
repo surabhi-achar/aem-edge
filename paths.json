@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/EDC-Wapha-POC/:/",
-    "/content/EDC-Wapha-POC/configuration:/.helix/config.json",
-    "/content/EDC-Wapha-POC/metadata:/metadata.json"
+    "/content/EDS-Wapha-POC/:/",
+    "/content/EDS-Wapha-POC/configuration:/.helix/config.json",
+    "/content/EDS-Wapha-POC/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/EDC-Wapha-POC/"
+    "/content/EDS-Wapha-POC/"
   ]
 }
