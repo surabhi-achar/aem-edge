@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
+    "/content/EDC-Wapha-POC/:/",
+    "/content/EDC-Wapha-POC/configuration:/.helix/config.json",
+    "/content/EDC-Wapha-POC/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-boilerplate/"
+    "/content/EDC-Wapha-POC/"
   ]
 }
