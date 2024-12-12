@@ -184,10 +184,12 @@
                 "template": {
                   "name": "Teaser",
                   "model": "teaser",
-                  "image": "/default-image.jpg",
+                  "backgroundImage": "",
+                  "imageAlt": "Default Alt Text",
+                  "preTitle": "Default Pre Title",
                   "title": "Default Title",
-                  "description": "Default description text",
-                  "link": "/default-link"
+                  "titleType": "h4",
+                  "description": "Default Description"
                 }
               }
             }
