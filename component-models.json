@@ -209,33 +209,51 @@
     "fields": [
       {
         "component": "image",
-        "name": "image",
+        "name": "backgroundImage",
         "value": "",
-        "label": "Teaser Image",
+        "label": "Background Image",
+        "valueType": "string",
+        "allowMultiple": false,
+        "allowUpload": false,
+        "source": "siteImages" 
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "value": "",
+        "label": "Image Alt",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "preTitle",
+        "value": "",
+        "label": "Pre Title",
         "valueType": "string"
       },
       {
         "component": "text",
         "name": "title",
         "value": "",
-        "label": "Teaser Title",
+        "label": "Title",
         "valueType": "string"
+      },
+      {
+        "component": "dropdown",
+        "name": "titleType",
+        "value": "h4",
+        "label": "Title Type",
+        "valueType": "string",
+        "options": ["h1", "h2", "h3", "h4", "h5", "h6"]
       },
       {
         "component": "richtext",
         "name": "description",
         "value": "",
-        "label": "Teaser Description",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "link",
-        "value": "",
-        "label": "Teaser Link",
+        "label": "Description",
         "valueType": "string"
       }
     ]
   }
-   
+  
 ]
