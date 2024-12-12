@@ -208,16 +208,18 @@
     "id": "teaser",
     "fields": [
       {
-        "component": "reference",
-        "name": "image",
-        "label": "Backgroud Image",
-        "multi": false
+        "component": "image",  
+        "name": "backgroundImage",
+        "label": "Background Image",
+        "helpText": "Upload or select a background image for the teaser component",
+        "value": "",
+        "valueType": "string",
+        "resourceType": "core/franklin/components/image/v1/image"  
       },
       {
         "component": "text",
         "name": "imageAlt",
         "label": "Image Alt Text",
-        "helpText": "Add descriptive text for the background image (for accessibility)",
         "value": "",
         "valueType": "string"
       },
@@ -225,7 +227,6 @@
         "component": "text",
         "name": "preTitle",
         "label": "Pre-title",
-        "helpText": "Add a small heading or introductory text",
         "value": "",
         "valueType": "string"
       },
@@ -233,7 +234,6 @@
         "component": "text",
         "name": "title",
         "label": "Title",
-        "helpText": "Main title for the teaser component",
         "value": "",
         "valueType": "string"
       },
@@ -241,7 +241,6 @@
         "component": "select",
         "name": "titleType",
         "label": "Title Type",
-        "helpText": "Select the HTML heading type for the title",
         "options": [
           {"label": "H1", "value": "h1"},
           {"label": "H2", "value": "h2"},
@@ -255,7 +254,6 @@
         "component": "richtext",
         "name": "description",
         "label": "Description",
-        "helpText": "Add a description or additional details for the teaser",
         "value": "",
         "valueType": "string"
       }
