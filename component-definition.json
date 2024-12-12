@@ -185,11 +185,11 @@
                   "name": "Teaser",
                   "model": "teaser",
                   "backgroundImage": "",
-                  "imageAlt": "",
-                  "preTitle": "",
-                  "title": "",
+                  "imageAlt": "Default Alt Text",
+                  "preTitle": "Default Pre-title",
+                  "title": "Default Title",
                   "titleType": "h4",
-                  "description": ""
+                  "description": "Default Description"
                 }
               }
             }
