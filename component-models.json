@@ -210,47 +210,49 @@
       {
         "component": "image",
         "name": "backgroundImage",
-        "value": "",
         "label": "Background Image",
-        "valueType": "string",
-        "allowMultiple": false,
-        "allowUpload": false,
-        "source": "siteImages" 
+        "value": "",
+        "valueType": "string"
       },
       {
         "component": "text",
         "name": "imageAlt",
+        "label": "Image Alt Text",
         "value": "",
-        "label": "Image Alt",
         "valueType": "string"
       },
       {
         "component": "text",
         "name": "preTitle",
+        "label": "Pre-title",
         "value": "",
-        "label": "Pre Title",
         "valueType": "string"
       },
       {
         "component": "text",
         "name": "title",
-        "value": "",
         "label": "Title",
+        "value": "",
         "valueType": "string"
       },
       {
-        "component": "dropdown",
+        "component": "select",
         "name": "titleType",
-        "value": "h4",
         "label": "Title Type",
-        "valueType": "string",
-        "options": ["h1", "h2", "h3", "h4", "h5", "h6"]
+        "options": [
+          {"label": "H1", "value": "h1"},
+          {"label": "H2", "value": "h2"},
+          {"label": "H3", "value": "h3"},
+          {"label": "H4", "value": "h4"}
+        ],
+        "value": "h4",
+        "valueType": "string"
       },
       {
         "component": "richtext",
         "name": "description",
-        "value": "",
         "label": "Description",
+        "value": "",
         "valueType": "string"
       }
     ]

@@ -184,9 +184,9 @@
                 "template": {
                   "name": "Teaser",
                   "model": "teaser",
-                  "backgroundImage": "",
+                  "backgroundImage": "/default/path/image.png",
                   "imageAlt": "Default Alt Text",
-                  "preTitle": "Default Pre Title",
+                  "preTitle": "Default Pre-title",
                   "title": "Default Title",
                   "titleType": "h4",
                   "description": "Default Description"
