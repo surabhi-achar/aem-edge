@@ -208,12 +208,10 @@
     "id": "teaser",
     "fields": [
       {
-        "component": "image",
-        "name": "backgroundImage",
-        "label": "Background Image",
-        "helpText": "Upload or select a background image for the teaser component",
-        "value": "",
-        "valueType": "string"
+        "component": "reference",
+        "name": "image",
+        "label": "Backgroud Image",
+        "multi": false
       },
       {
         "component": "text",
