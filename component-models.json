@@ -208,11 +208,11 @@
     "id": "teaser",
     "fields": [
       {
-        "component": "image",
+        "component": "image",  
         "name": "backgroundImage",
         "label": "Background Image",
         "value": "",
-        "valueType": "string"
+        "valueType": "string" 
       },
       {
         "component": "text",
