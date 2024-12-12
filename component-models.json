@@ -203,5 +203,39 @@
          "value": ""
        }
      ]
-  }  
+  } ,
+  {
+    "id": "teaser",
+    "fields": [
+      {
+        "component": "image",
+        "name": "image",
+        "value": "",
+        "label": "Teaser Image",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "value": "",
+        "label": "Teaser Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Teaser Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "link",
+        "value": "",
+        "label": "Teaser Link",
+        "valueType": "string"
+      }
+    ]
+  }
+   
 ]
