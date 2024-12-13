@@ -283,6 +283,7 @@
         "component": "list",
         "name": "menuItems",
         "label": "Menu Items",
+        "valueType": "array",
         "value": [
           {
             "label": "Home",
@@ -301,7 +302,6 @@
             "link": "/contact"
           }
         ],
-        "valueType": "array",
         "fieldConfig": {
           "itemType": "object",
           "fields": [
@@ -309,15 +309,15 @@
               "component": "text",
               "name": "label",
               "label": "Label",
-              "value": "",
-              "valueType": "string"
+              "valueType": "string",
+              "value": ""
             },
             {
               "component": "text",
               "name": "link",
               "label": "Link",
-              "value": "",
-              "valueType": "string"
+              "valueType": "string",
+              "value": ""
             }
           ]
         }
