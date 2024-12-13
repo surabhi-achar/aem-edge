@@ -275,54 +275,6 @@
         "valueType": "string"
       }
      ]
-  },
-  {
-    "id": "navigation-bar",
-    "fields": [
-      {
-        "component": "list",
-        "name": "menuItems",
-        "label": "Menu Items",
-        "valueType": "array",
-        "value": [
-          {
-            "label": "Home",
-            "link": "/home"
-          },
-          {
-            "label": "About Us",
-            "link": "/about-us"
-          },
-          {
-            "label": "Services",
-            "link": "/services"
-          },
-          {
-            "label": "Contact",
-            "link": "/contact"
-          }
-        ],
-        "fieldConfig": {
-          "itemType": "object",
-          "fields": [
-            {
-              "component": "text",
-              "name": "label",
-              "label": "Label",
-              "valueType": "string",
-              "value": ""
-            },
-            {
-              "component": "text",
-              "name": "link",
-              "label": "Link",
-              "valueType": "string",
-              "value": ""
-            }
-          ]
-        }
-      }
-    ]
   }
    
 ]
