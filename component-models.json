@@ -273,7 +273,33 @@
         "value":"",
         "label": "Description",
         "valueType": "string"
+      },
+      {
+        "id": "carousel",
+        "fields": [
+          {
+            "component": "multifield",
+            "name": "items",
+            "label": "Carousel Items",
+            "valueType": "array",
+            "fields": [
+              {
+                "component": "reference",
+                "name": "image",
+                "label": "Image",
+                "valueType": "string"
+              },
+              {
+                "component": "text",
+                "name": "caption",
+                "label": "Caption",
+                "valueType": "string"
+              }
+            ]
+          }
+        ]
       }
+      
      ]
   }
    

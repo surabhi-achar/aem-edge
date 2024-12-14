@@ -1,0 +1,29 @@
+.block.carousel {
+    position: relative;
+    overflow: hidden;
+  }
+  .block.carousel .carousel-item {
+    display: none;
+    width: 100%;
+  }
+  .block.carousel .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+  .block.carousel .carousel-prev,
+  .block.carousel .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .block.carousel .carousel-prev {
+    left: 10px;
+  }
+  .block.carousel .carousel-next {
+    right: 10px;
+  }
+  
