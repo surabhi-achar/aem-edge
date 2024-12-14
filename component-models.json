@@ -278,36 +278,11 @@
         "id": "carousel",
         "fields": [
           {
-            "component": "multifield",
+            "component": "reference",
             "name": "items",
             "label": "Carousel Items",
             "valueType": "array",
-            "fields": [
-              {
-                "component": "reference",
-                "name": "image",
-                "label": "Image",
-                "valueType": "string"
-              },
-              {
-                "component": "text",
-                "name": "title",
-                "label": "Title",
-                "valueType": "string"
-              },
-              {
-                "component": "text",
-                "name": "description",
-                "label": "Description",
-                "valueType": "string"
-              },
-              {
-                "component": "text",
-                "name": "link",
-                "label": "Link",
-                "valueType": "string"
-              }
-            ]
+            "multi": true
           }
         ]
       }
