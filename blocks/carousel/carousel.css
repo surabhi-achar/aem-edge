@@ -1,57 +1,57 @@
-.block.carousel {
+.carousel {
     position: relative;
     overflow: hidden;
     width: 100%;
-}
-
-.block.carousel .carousel-item {
+  }
+  
+  .carousel-slide {
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 100%;
-    height: auto;
     transition: transform 0.5s ease-in-out;
-}
-
-.block.carousel .carousel-prev,
-.block.carousel .carousel-next {
+  }
+  
+  .carousel-prev,
+  .carousel-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
+    padding: 0.5rem 1rem;
     cursor: pointer;
     z-index: 1;
-    padding: 0.5rem 1rem;
-}
-
-.block.carousel .carousel-prev {
+  }
+  
+  .carousel-prev {
     left: 10px;
-}
-
-.block.carousel .carousel-next {
+  }
+  
+  .carousel-next {
     right: 10px;
-}
-
-.block.carousel .carousel-dots {
+  }
+  
+  .carousel-dots {
     position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 5px;
-}
-
-.block.carousel .carousel-dot {
+  }
+  
+  .carousel-dot {
     width: 10px;
     height: 10px;
-    background: #ccc;
+    background: gray;
     border-radius: 50%;
     border: none;
     cursor: pointer;
-}
-
-.block.carousel .carousel-dot.active {
+  }
+  
+  .carousel-dot.active {
     background: yellow;
-}
+  }
+  
