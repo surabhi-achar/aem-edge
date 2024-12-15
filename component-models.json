@@ -359,6 +359,31 @@
     }
 
   ]
+  },
+  {
+    "id": "calculator",
+    "fields": [
+      {
+        "component": "select",
+        "label": "Theme",
+        "name": "select",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Qantas",
+            "value": "qantas"
+          },
+          {
+            "name": "Telstra",
+            "value": "telstra"
+          }
+        ]
+      }
+    ]
   }
 
    
