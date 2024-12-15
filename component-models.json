@@ -396,6 +396,54 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "iframe",
+    "fields": [
+      {
+        "component": "text",
+        "name": "href",
+        "label": "Iframe URL",
+        "value": "",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "link",
+    "fields": [
+      {
+        "component": "link",
+        "name": "href",
+        "label": "Link",
+        "value": "",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "experience-fragment",
+    "fields": [
+      {
+        "component": "aem-experience-fragment",
+        "name": "picker",
+        "label": "Experience Fragment Picker",
+        "valueType": "string",
+        "variationName": "experienceFragmentVariation"
+      }
+    ]
+  },
+  {
+    "id": "content-fragment",
+    "fields": [
+      {
+        "component": "aem-content-fragment",
+        "name": "picker",
+        "label": "Content Fragment Picker",
+        "valueType": "string",
+        "variationName": "contentFragmentVariation"
+      }
+    ]
   }
 
    
