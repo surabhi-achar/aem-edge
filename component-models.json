@@ -273,18 +273,6 @@
         "value":"",
         "label": "Description",
         "valueType": "string"
-      },
-      {
-        "id": "carousel",
-        "fields": [
-          {
-            "component": "reference",
-            "name": "items",
-            "label": "Carousel Items",
-            "valueType": "array",
-            "multi": true
-          }
-        ]
       }
       
      ]
