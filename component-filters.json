@@ -63,7 +63,9 @@
       "hero",
       "cards",
       "columns",
-      "quote"
+      "quote",
+      "teaser",
+      "stage-header"
     ]
   }
   
