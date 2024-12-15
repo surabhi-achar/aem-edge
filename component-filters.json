@@ -67,7 +67,12 @@
       "teaser",
       "stage-header", 
       "calculator",
-      "block-reference"
+      "block-reference",
+      "iframe",
+      "link",
+        "experience-fragment",
+      "content-fragment"
+
     ]
   }
   
