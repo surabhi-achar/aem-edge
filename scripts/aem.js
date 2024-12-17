@@ -404,36 +404,54 @@ function wrapTextNodes(block) {
 function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
+
     if (a.href !== a.textContent) {
       const up = a.parentElement;
-      const twoup = a.parentElement.parentElement;
+      const twoup = up?.parentElement;
+
       if (!a.querySelector('img')) {
         if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
-          a.className = 'button'; // default
+          // Add default button classes
+          a.classList.add('button');
           up.classList.add('button-container');
+
+          // Apply alignment if data attribute exists
+          const alignment = a.dataset.alignment || 'align-left';
+          up.classList.add(alignment);
         }
+
         if (
           up.childNodes.length === 1
           && up.tagName === 'STRONG'
           && twoup.childNodes.length === 1
           && twoup.tagName === 'P'
         ) {
-          a.className = 'button primary';
+          a.classList.add('button', 'primary');
           twoup.classList.add('button-container');
+
+          // Apply alignment if data attribute exists
+          const alignment = a.dataset.alignment || 'align-left';
+          twoup.classList.add(alignment);
         }
+
         if (
           up.childNodes.length === 1
           && up.tagName === 'EM'
           && twoup.childNodes.length === 1
           && twoup.tagName === 'P'
         ) {
-          a.className = 'button secondary';
+          a.classList.add('button', 'secondary');
           twoup.classList.add('button-container');
+
+          // Apply alignment if data attribute exists
+          const alignment = a.dataset.alignment || 'align-left';
+          twoup.classList.add(alignment);
         }
       }
     }
   });
 }
+
 
 /**
  * Add <img> for icon, prefixed with codeBasePath and optional prefix.
