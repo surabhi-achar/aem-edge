@@ -401,59 +401,41 @@ function wrapTextNodes(block) {
  * Decorates paragraphs containing a single link as buttons.
  * @param {Element} element container element
  */
-
-
 function decorateButtons(element) {
-  // Iterate through all anchor tags inside the element
   element.querySelectorAll('a').forEach((a) => {
-      a.title = a.title || a.textContent;
-
-      // Skip if href and textContent are the same (optional condition)
-      if (a.href !== a.textContent) {
-          const up = a.parentElement; // Parent of the link
-          const twoup = up.parentElement; // Grandparent of the link
-
-          // Only process if no <img> is found within the link
-          if (!a.querySelector('img')) {
-              // Decoration for normal button in <p> or <div>
-              if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
-                  a.className = 'button'; // default button
-                  up.classList.add('button-container');
-              }
-              // Decoration for primary button in <strong>
-              if (up.childNodes.length === 1 && up.tagName === 'STRONG' && twoup.childNodes.length === 1 && twoup.tagName === 'P') {
-                  a.className = 'button primary';
-                  twoup.classList.add('button-container');
-              }
-              // Decoration for secondary button in <em>
-              if (up.childNodes.length === 1 && up.tagName === 'EM' && twoup.childNodes.length === 1 && twoup.tagName === 'P') {
-                  a.className = 'button secondary';
-                  twoup.classList.add('button-container');
-              }
-
-              // Now handle the alignment logic
-              const block = element.closest('[data-alignment]');
-              if (block) {
-                  const alignment = block.dataset.alignment || 'align-left';
-                  const alignmentClasses = ['align-left', 'align-center', 'align-right'];
-
-                  // Find the button container for the current button and apply alignment
-                  const buttonContainer = up.closest('.button-container');
-                  if (buttonContainer) {
-                      // Remove any previous alignment classes
-                      buttonContainer.classList.remove(...alignmentClasses);
-                      // Add the new alignment class
-                      if (alignmentClasses.includes(alignment)) {
-                          buttonContainer.classList.add(alignment);
-                      } else {
-                          buttonContainer.classList.add('align-left'); // Default alignment if none is set
-                      }
-                  }
-              }
-          }
+    a.title = a.title || a.textContent;
+    if (a.href !== a.textContent) {
+      const up = a.parentElement;
+      const twoup = a.parentElement.parentElement;
+      if (!a.querySelector('img')) {
+        if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
+          a.className = 'button'; // default
+          up.classList.add('button-container');
+        }
+        if (
+          up.childNodes.length === 1
+          && up.tagName === 'STRONG'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
+        ) {
+          a.className = 'button primary';
+          twoup.classList.add('button-container');
+        }
+        if (
+          up.childNodes.length === 1
+          && up.tagName === 'EM'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
+        ) {
+          a.className = 'button secondary';
+          twoup.classList.add('button-container');
+        }
       }
+    }
   });
 }
+
+
 
 
 
