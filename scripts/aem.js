@@ -401,6 +401,7 @@ function wrapTextNodes(block) {
  * Decorates paragraphs containing a single link as buttons.
  * @param {Element} element container element
  */
+
 function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
@@ -410,16 +411,16 @@ function decorateButtons(element) {
       const twoup = up?.parentElement;
 
       if (!a.querySelector('img')) {
+        let alignment = a.dataset.alignment || 'align-left'; // Default to align-left
+
+        // Add default button and button-container classes
         if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
-          // Add default button classes
           a.classList.add('button');
           up.classList.add('button-container');
-
-          // Apply alignment if data attribute exists
-          const alignment = a.dataset.alignment || 'align-left';
-          up.classList.add(alignment);
+          up.classList.add(alignment); // Add alignment class dynamically
         }
 
+        // For <strong> inside <p> tag
         if (
           up.childNodes.length === 1
           && up.tagName === 'STRONG'
@@ -428,12 +429,10 @@ function decorateButtons(element) {
         ) {
           a.classList.add('button', 'primary');
           twoup.classList.add('button-container');
-
-          // Apply alignment if data attribute exists
-          const alignment = a.dataset.alignment || 'align-left';
-          twoup.classList.add(alignment);
+          twoup.classList.add(alignment); // Add alignment class dynamically
         }
 
+        // For <em> inside <p> tag
         if (
           up.childNodes.length === 1
           && up.tagName === 'EM'
@@ -442,15 +441,13 @@ function decorateButtons(element) {
         ) {
           a.classList.add('button', 'secondary');
           twoup.classList.add('button-container');
-
-          // Apply alignment if data attribute exists
-          const alignment = a.dataset.alignment || 'align-left';
-          twoup.classList.add(alignment);
+          twoup.classList.add(alignment); // Add alignment class dynamically
         }
       }
     }
   });
 }
+
 
 
 /**
