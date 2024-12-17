@@ -401,47 +401,34 @@ function wrapTextNodes(block) {
  * Decorates paragraphs containing a single link as buttons.
  * @param {Element} element container element
  */
-
 function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
-
     if (a.href !== a.textContent) {
       const up = a.parentElement;
-      const twoup = up?.parentElement;
-
+      const twoup = a.parentElement.parentElement;
       if (!a.querySelector('img')) {
-        let alignment = a.dataset.alignment || 'align-left'; // Default to align-left
-
-        // Add default button and button-container classes
         if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
-          a.classList.add('button');
+          a.className = 'button'; // default
           up.classList.add('button-container');
-          up.classList.add(alignment); // Add alignment class dynamically
         }
-
-        // For <strong> inside <p> tag
         if (
           up.childNodes.length === 1
           && up.tagName === 'STRONG'
           && twoup.childNodes.length === 1
           && twoup.tagName === 'P'
         ) {
-          a.classList.add('button', 'primary');
+          a.className = 'button primary';
           twoup.classList.add('button-container');
-          twoup.classList.add(alignment); // Add alignment class dynamically
         }
-
-        // For <em> inside <p> tag
         if (
           up.childNodes.length === 1
           && up.tagName === 'EM'
           && twoup.childNodes.length === 1
           && twoup.tagName === 'P'
         ) {
-          a.classList.add('button', 'secondary');
+          a.className = 'button secondary';
           twoup.classList.add('button-container');
-          twoup.classList.add(alignment); // Add alignment class dynamically
         }
       }
     }
