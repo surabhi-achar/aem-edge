@@ -401,6 +401,7 @@ function wrapTextNodes(block) {
  * Decorates paragraphs containing a single link as buttons.
  * @param {Element} element container element
  */
+
 function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
@@ -430,10 +431,31 @@ function decorateButtons(element) {
           a.className = 'button secondary';
           twoup.classList.add('button-container');
         }
+        
+        // Align the button container based on the block's alignment
+        const block = element.closest('[data-alignment]');
+        if (block) {
+          const alignment = block.dataset.alignment || 'align-left';
+          const alignmentClasses = ['align-left', 'align-center', 'align-right'];
+
+          // Ensure alignment is applied to button-container as well
+          const buttonContainer = up.closest('.button-container');
+          if (buttonContainer) {
+            // Remove existing alignment classes
+            buttonContainer.classList.remove(...alignmentClasses);
+            // Add the correct alignment class
+            if (alignmentClasses.includes(alignment)) {
+              buttonContainer.classList.add(alignment);
+            } else {
+              buttonContainer.classList.add('align-left'); // Default to left
+            }
+          }
+        }
       }
     }
   });
 }
+
 
 
 
