@@ -1,20 +1,16 @@
-/* Button container styles */
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
 .button-container {
-    display: flex; /* Flexbox layout */
-    margin: 0; /* Reset margins */
-}
-
-/* Left Alignment */
-.button-container.align-left {
-    justify-content: flex-start;
-}
-
-/* Center Alignment */
-.button-container.align-center {
-    justify-content: center;
-}
-
-/* Right Alignment */
-.button-container.align-right {
-    justify-content: flex-end;
+    display: inline-block; /* Ensures that the container behaves as an inline element */
+    margin: 0 auto;
 }
