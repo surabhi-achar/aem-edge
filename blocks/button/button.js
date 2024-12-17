@@ -12,7 +12,7 @@ export default function decorate(block) {
         block.classList.add('align-left'); // Fallback to 'align-left'
     }
 
-    // Find the button-container
+    // Find the button-container and apply the alignment
     const buttonContainer = block.querySelector('.button-container');
     if (buttonContainer) {
         // Ensure button-container inherits alignment
