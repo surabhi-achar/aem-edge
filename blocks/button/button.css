@@ -1,16 +1,21 @@
+/* Ensure button-container uses flexbox for alignment */
 .button-container {
-    display: flex; /* Align the container's children */
-  }
-  
-  .button-container.align-left {
-    justify-content: flex-start;
-  }
-  
-  .button-container.align-center {
-    justify-content: center;
-  }
-  
-  .button-container.align-right {
-    justify-content: flex-end;
-  }
-  
+    display: flex; /* Flexbox layout */
+    margin: 0; /* Remove default margins if any */
+    padding: 0;
+}
+
+/* Left Alignment */
+.button-container.align-left {
+    justify-content: flex-start; /* Align left */
+}
+
+/* Center Alignment */
+.button-container.align-center {
+    justify-content: center; /* Align center */
+}
+
+/* Right Alignment */
+.button-container.align-right {
+    justify-content: flex-end; /* Align right */
+}
