@@ -1,0 +1,36 @@
+.block.button {
+    display: flex; /* Ensures alignment works */
+}
+
+.block.button.align-left {
+    justify-content: flex-start; /* Left alignment */
+}
+
+.block.button.align-center {
+    justify-content: center; /* Center alignment */
+}
+
+.block.button.align-right {
+    justify-content: flex-end; /* Right alignment */
+}
+
+.block.button a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.block.button a.primary {
+    background-color: #007BFF;
+    color: #FFF;
+    border-radius: 4px;
+}
+
+.block.button a.secondary {
+    background-color: #6C757D;
+    color: #FFF;
+    border-radius: 4px;
+}

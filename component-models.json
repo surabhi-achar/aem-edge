@@ -92,6 +92,16 @@
             "value": "secondary"
           }
         ]
+      },
+      {
+        "component": "select",
+        "name": "alignment",
+        "label": "Alignment",
+        "options": [
+          { "name": "Left", "value": "align-left" },
+          { "name": "Center", "value": "align-center" },
+          { "name": "Right", "value": "align-right" }
+        ]
       }
     ]
   },
