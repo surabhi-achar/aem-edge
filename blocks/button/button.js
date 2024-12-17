@@ -1,5 +1,4 @@
 export default function decorate(block) {
-    // Default to 'align-left' if no alignment is specified
     const alignment = block.dataset.alignment || 'align-left';
 
     // Remove any existing alignment classes
@@ -19,14 +18,5 @@ export default function decorate(block) {
         // Ensure button-container inherits alignment
         buttonContainer.classList.remove(...alignmentClasses);
         buttonContainer.classList.add(alignment);
-    }
-
-    // Apply button type classes
-    const link = block.querySelector('a');
-    if (link) {
-        link.classList.add('button');
-        if (link.parentElement.tagName === 'STRONG') {
-            link.classList.add('primary'); // If inside <strong>, make it primary
-        }
     }
 }
