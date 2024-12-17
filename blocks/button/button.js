@@ -1,18 +1,18 @@
 export default function decorate(block) {
-    const alignment = block.dataset.alignment || 'align-left'; // Get alignment from dataset
-    const linkType = block.dataset.linktype || ''; // Get button type
+    const alignment = block.dataset.alignment || 'align-left'; // Default alignment class
 
+    // Find the button-container
+    const buttonContainer = block.querySelector('.button-container');
+    if (buttonContainer) {
+        buttonContainer.classList.add(alignment); // Add alignment class dynamically
+    }
+
+    // Apply button type classes
     const link = block.querySelector('a');
     if (link) {
-        link.classList.add('button'); // Add base button class
-        if (linkType) {
-            link.classList.add(linkType); // Add button type (primary/secondary)
-        }
-
-        // Add alignment class to parent container
-        const container = link.parentElement;
-        if (container) {
-            container.classList.add('button-container', alignment);
+        link.classList.add('button');
+        if (link.parentElement.tagName === 'STRONG') {
+            link.classList.add('primary'); // If inside <strong>, make it primary
         }
     }
 }
