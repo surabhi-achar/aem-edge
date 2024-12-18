@@ -407,52 +407,33 @@ function decorateButtons(element) {
     if (a.href !== a.textContent) {
       const up = a.parentElement;
       const twoup = a.parentElement.parentElement;
-
       if (!a.querySelector('img')) {
-        // Default button styling
         if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
           a.className = 'button'; // default
           up.classList.add('button-container');
-
-          // Handle alignment
-          const alignmentClass = up.getAttribute('data-alignment'); // Expect alignment class here
-          if (alignmentClass) up.classList.add(alignmentClass);
         }
-
-        // Primary button styling
         if (
-          up.childNodes.length === 1 &&
-          up.tagName === 'STRONG' &&
-          twoup.childNodes.length === 1 &&
-          twoup.tagName === 'P'
+          up.childNodes.length === 1
+          && up.tagName === 'STRONG'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
         ) {
           a.className = 'button primary';
           twoup.classList.add('button-container');
-
-          // Handle alignment
-          const alignmentClass = twoup.getAttribute('data-alignment');
-          if (alignmentClass) twoup.classList.add(alignmentClass);
         }
-
-        // Secondary button styling
         if (
-          up.childNodes.length === 1 &&
-          up.tagName === 'EM' &&
-          twoup.childNodes.length === 1 &&
-          twoup.tagName === 'P'
+          up.childNodes.length === 1
+          && up.tagName === 'EM'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
         ) {
           a.className = 'button secondary';
           twoup.classList.add('button-container');
-
-          // Handle alignment
-          const alignmentClass = twoup.getAttribute('data-alignment');
-          if (alignmentClass) twoup.classList.add(alignmentClass);
         }
       }
     }
   });
 }
-
 
 
 
