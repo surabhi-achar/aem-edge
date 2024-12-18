@@ -404,31 +404,54 @@ function wrapTextNodes(block) {
 function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
+
     if (a.href !== a.textContent) {
       const up = a.parentElement;
-      const twoup = a.parentElement.parentElement;
+      const twoup = up ? up.parentElement : null;
+
       if (!a.querySelector('img')) {
-        if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
+        // Default button styling
+        if (up && up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
           a.className = 'button'; // default
           up.classList.add('button-container');
+
+          // Handle alignment for default button
+          const alignmentClass = up.dataset.alignment; // Using dataset for data-alignment attribute
+          if (alignmentClass) up.classList.add(alignmentClass);
         }
+
+        // Primary button styling
         if (
-          up.childNodes.length === 1
-          && up.tagName === 'STRONG'
-          && twoup.childNodes.length === 1
-          && twoup.tagName === 'P'
+          up &&
+          up.childNodes.length === 1 &&
+          up.tagName === 'STRONG' &&
+          twoup &&
+          twoup.childNodes.length === 1 &&
+          twoup.tagName === 'P'
         ) {
           a.className = 'button primary';
           twoup.classList.add('button-container');
+
+          // Handle alignment for primary button
+          const alignmentClass = twoup.dataset.alignment; // Using dataset for data-alignment attribute
+          if (alignmentClass) twoup.classList.add(alignmentClass);
         }
+
+        // Secondary button styling
         if (
-          up.childNodes.length === 1
-          && up.tagName === 'EM'
-          && twoup.childNodes.length === 1
-          && twoup.tagName === 'P'
+          up &&
+          up.childNodes.length === 1 &&
+          up.tagName === 'EM' &&
+          twoup &&
+          twoup.childNodes.length === 1 &&
+          twoup.tagName === 'P'
         ) {
           a.className = 'button secondary';
           twoup.classList.add('button-container');
+
+          // Handle alignment for secondary button
+          const alignmentClass = twoup.dataset.alignment; // Using dataset for data-alignment attribute
+          if (alignmentClass) twoup.classList.add(alignmentClass);
         }
       }
     }
