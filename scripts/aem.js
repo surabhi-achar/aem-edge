@@ -402,6 +402,9 @@ function wrapTextNodes(block) {
  * @param {Element} element container element
  */
 function decorateButtons(element) {
+  const alignment = element.dataset.alignment || 'align-left'; // Fetch alignment
+  const alignmentClasses = ['align-left', 'align-center', 'align-right'];
+
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
     if (a.href !== a.textContent) {
@@ -410,7 +413,9 @@ function decorateButtons(element) {
       if (!a.querySelector('img')) {
         if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
           a.className = 'button'; // default
-          up.classList.add('button-container');
+          up.classList.add('button-container'); // Add button-container
+          up.classList.remove(...alignmentClasses); // Remove old alignment
+          up.classList.add(alignment); // Add current alignment
         }
         if (
           up.childNodes.length === 1
@@ -419,7 +424,9 @@ function decorateButtons(element) {
           && twoup.tagName === 'P'
         ) {
           a.className = 'button primary';
-          twoup.classList.add('button-container');
+          twoup.classList.add('button-container'); // Add button-container
+          twoup.classList.remove(...alignmentClasses); // Remove old alignment
+          twoup.classList.add(alignment); // Add current alignment
         }
         if (
           up.childNodes.length === 1
@@ -428,12 +435,15 @@ function decorateButtons(element) {
           && twoup.tagName === 'P'
         ) {
           a.className = 'button secondary';
-          twoup.classList.add('button-container');
+          twoup.classList.add('button-container'); // Add button-container
+          twoup.classList.remove(...alignmentClasses); // Remove old alignment
+          twoup.classList.add(alignment); // Add current alignment
         }
       }
     }
   });
 }
+
 
 
 

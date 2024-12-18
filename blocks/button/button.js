@@ -1,31 +1,19 @@
-/**
- * Applies alignment to a block and its button container.
- * @param {Element} block - The block containing the buttons
- */
+
 export default function decorate(block) {
     const alignment = block.dataset.alignment || 'align-left';
-    
     const alignmentClasses = ['align-left', 'align-center', 'align-right'];
-
-
+  
+    // Remove existing alignment classes
     block.classList.remove(...alignmentClasses);
-
-    if (alignmentClasses.includes(alignment)) {
-        block.classList.add(alignment);
-    } else {
-        block.classList.add('align-left'); 
-    }
-
-
+    block.classList.add(alignment);
+  
+    // Update button container alignment
     const buttonContainer = block.querySelector('.button-container');
     if (buttonContainer) {
-        buttonContainer.classList.remove(...alignmentClasses);
-        buttonContainer.classList.add(alignment);
+      buttonContainer.classList.remove(...alignmentClasses);
+      buttonContainer.classList.add(alignment);
+    } else {
+      console.warn('Button container not found!');
     }
-
-    const buttons = block.querySelectorAll('.button-container');
-    buttons.forEach(button => {
-        button.classList.remove(...alignmentClasses);
-        button.classList.add(alignment);
-    });
-}
+  }
+  
