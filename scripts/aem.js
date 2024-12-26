@@ -403,37 +403,54 @@ function wrapTextNodes(block) {
  */
 function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
+    // Set the title attribute
     a.title = a.title || a.textContent;
+
+    // Only process links where href is different from the text content (not plain text)
     if (a.href !== a.textContent) {
-      const up = a.parentElement;
-      const twoup = a.parentElement.parentElement;
+      const up = a.parentElement;  // Parent element
+      const twoup = a.parentElement.parentElement;  // Grandparent element
+      
+      // Check for button-style structures and apply styles
       if (!a.querySelector('img')) {
         if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
-          a.className = 'button'; // default
+          a.className = 'button'; // Default button style
           up.classList.add('button-container');
         }
+
         if (
           up.childNodes.length === 1
           && up.tagName === 'STRONG'
           && twoup.childNodes.length === 1
           && twoup.tagName === 'P'
         ) {
-          a.className = 'button primary';
+          a.className = 'button primary'; // Primary button style
           twoup.classList.add('button-container');
         }
+
         if (
           up.childNodes.length === 1
           && up.tagName === 'EM'
           && twoup.childNodes.length === 1
           && twoup.tagName === 'P'
         ) {
-          a.className = 'button secondary';
+          a.className = 'button secondary'; // Secondary button style
           twoup.classList.add('button-container');
+        }
+        
+        // New part: Check alignment of the parent container (up or twoup)
+        if (up.style.textAlign === 'center' || twoup.style.textAlign === 'center') {
+          up.classList.add('align-center');  // Add class to center-align
+        } else if (up.style.textAlign === 'right' || twoup.style.textAlign === 'right') {
+          up.classList.add('align-right');  // Add class to right-align
+        } else {
+          up.classList.add('align-left');   // Default to left-align
         }
       }
     }
   });
 }
+
 
 /**
  * Add <img> for icon, prefixed with codeBasePath and optional prefix.

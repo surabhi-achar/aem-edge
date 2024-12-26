@@ -1,14 +1,18 @@
-
-.button-container {
-    display: flex; 
-    margin: 0; 
-}
-.button-container.align-left {
-    justify-content: flex-start;
-}
+/* Align buttons to the center, right, or left */
 .button-container.align-center {
-    justify-content: center;
-}
-.button-container.align-right {
-    justify-content: flex-end;
-}
+    text-align: center;
+  }
+  
+  .button-container.align-right {
+    text-align: right;
+  }
+  
+  .button-container.align-left {
+    text-align: left;
+  }
+  
+  /* Optional: Further refinement of button positioning within the container */
+  .button-container {
+    display: inline-block;  /* Ensure the buttons are inline-blocks for alignment */
+  }
+  
