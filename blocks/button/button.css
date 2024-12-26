@@ -11,8 +11,7 @@
     text-align: left;
   }
   
-  /* Optional: Further refinement of button positioning within the container */
   .button-container {
-    display: inline-block;  /* Ensure the buttons are inline-blocks for alignment */
+    display: inline-block;  
   }
   
